@@ -3,7 +3,20 @@ const axios = require('axios');
 const FormData = require('form-data');
 const fs = require('fs');
 const path = require('path');
+const express = require('express');
 
+const app = express();
+const PORT = process.env.PORT || 3000; // Define a porta aqui
+
+// Rota básica
+app.get('/', (req, res) => {
+    res.send('catbox esta online!');
+});
+
+// Inicia o servidor
+app.listen(PORT, () => {
+    console.log(`Servidor rodando na porta ${PORT}`);
+});
 // Token do bot
 const token = '7061502265:AAH7KZMqqfAxxAMcV4TwEZByLiWkcsyJ148';
 
